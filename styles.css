@@ -1,0 +1,238 @@
+/* SECTION 1: Flexbox (Task 1 & Task 2)*/
+.navbar{
+    display: flex;
+    justify-self: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0; 
+    margin: 0;
+}   
+
+.navbar a {
+    text-decoration: none; 
+    color: 	#00ff9f; 
+    font-size: 18px; 
+    font-family: Arial, sans-serif; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.4s ease; 
+}
+
+
+.navbar a:hover {
+    background-color: #bd00ff;
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .navbar a {
+        width: 100%; 
+        text-align: center; 
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    padding: 20px; 
+}
+
+
+.card {
+    flex: 1 1 200px; 
+    max-width: 300px; 
+    background-color: 	#05d9e8; 
+    border: 1px solid #005678; 
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    height: 250px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+/* SECTION 2: CSS GRID (Task 3 & Task 4)*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.gallery img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+.magazine {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 25% 75%; 
+    gap: 20px;
+    padding: 20px;
+}
+
+.magazine header{
+    grid-area: header;
+    background-color: #f89898; 
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px; 
+}
+.magazine footer {
+    grid-area: header;
+    grid-area: footer; 
+    background-color: #f89898; 
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px; 
+}
+
+.magazine aside {
+    grid-area: sidebar;
+    background-color: #f89898; 
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.magazine main {
+    grid-area: main;
+    background-color: #f89898; 
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .magazine {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+
+/* SECTION 3: Media Queries (Task 5 & Task 6)*/
+body {
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.responsive-text h1 {
+    font-size: 2rem; 
+}
+
+.responsive-text p {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 19.2px; 
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 22.4px; 
+    }
+}
+
+body.dark-mode {
+    background-color: #121212; 
+    color: #ffffff; 
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+}
+
+
+/* SECTION 4: ANIMATIONS (Task 7 & Task 8)*/
+.spinner {
+    width: 50px; 
+    height: 50px;
+    border: 5px solid #ccc; 
+    border-top: 5px solid #333; 
+    border-radius: 50%; 
+    animation: spin 2s linear infinite; 
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
+
+.pulse-button {
+    background-color: #ff0099; 
+    color: white; 
+    border: none;
+    border-radius: 8px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.pulse-button:hover {
+    transform: scale(1.5); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
